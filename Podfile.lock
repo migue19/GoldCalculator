@@ -1,0 +1,16 @@
+PODS:
+  - NutUtils (1.1.4)
+
+DEPENDENCIES:
+  - NutUtils
+
+SPEC REPOS:
+  trunk:
+    - NutUtils
+
+SPEC CHECKSUMS:
+  NutUtils: f08b0d5d9ff7792d35fb98aa4a594aedba44f277
+
+PODFILE CHECKSUM: cd2901a5fa227b51f915bcc8293546fb56e14628
+
+COCOAPODS: 1.14.2

@@ -13,9 +13,13 @@
 		F21D4C5B2B3DCB9100739FD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F21D4C592B3DCB9100739FD4 /* Main.storyboard */; };
 		F21D4C5D2B3DCB9200739FD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F21D4C5C2B3DCB9200739FD4 /* Assets.xcassets */; };
 		F21D4C602B3DCB9200739FD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F21D4C5E2B3DCB9200739FD4 /* LaunchScreen.storyboard */; };
+		F6E8CE499F78C77D725C4509 /* Pods_GoldCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7C620E25CCDE966C338D03 /* Pods_GoldCalculator.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2179C99EDD6E449D09DBBCCB /* Pods-GoldCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoldCalculator.debug.xcconfig"; path = "Target Support Files/Pods-GoldCalculator/Pods-GoldCalculator.debug.xcconfig"; sourceTree = "<group>"; };
+		3D7C620E25CCDE966C338D03 /* Pods_GoldCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoldCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52196C4F0E109EC9A1762900 /* Pods-GoldCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoldCalculator.release.xcconfig"; path = "Target Support Files/Pods-GoldCalculator/Pods-GoldCalculator.release.xcconfig"; sourceTree = "<group>"; };
 		F21D4C502B3DCB9100739FD4 /* GoldCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoldCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F21D4C532B3DCB9100739FD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F21D4C552B3DCB9100739FD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6E8CE499F78C77D725C4509 /* Pods_GoldCalculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6975B8E8E6BC2C5C638CCFC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D7C620E25CCDE966C338D03 /* Pods_GoldCalculator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8F537BECDFF4F660893161EF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2179C99EDD6E449D09DBBCCB /* Pods-GoldCalculator.debug.xcconfig */,
+				52196C4F0E109EC9A1762900 /* Pods-GoldCalculator.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F21D4C472B3DCB9100739FD4 = {
 			isa = PBXGroup;
 			children = (
 				F21D4C522B3DCB9100739FD4 /* GoldCalculator */,
 				F21D4C512B3DCB9100739FD4 /* Products */,
+				8F537BECDFF4F660893161EF /* Pods */,
+				6975B8E8E6BC2C5C638CCFC9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F21D4C642B3DCB9200739FD4 /* Build configuration list for PBXNativeTarget "GoldCalculator" */;
 			buildPhases = (
+				46DDB5B7C24910765838CD52 /* [CP] Check Pods Manifest.lock */,
 				F21D4C4C2B3DCB9100739FD4 /* Sources */,
 				F21D4C4D2B3DCB9100739FD4 /* Frameworks */,
 				F21D4C4E2B3DCB9100739FD4 /* Resources */,
+				5108EC366CC30F471DD68DAD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		46DDB5B7C24910765838CD52 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoldCalculator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5108EC366CC30F471DD68DAD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoldCalculator/Pods-GoldCalculator-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoldCalculator/Pods-GoldCalculator-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoldCalculator/Pods-GoldCalculator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F21D4C4C2B3DCB9100739FD4 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		F21D4C652B3DCB9200739FD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2179C99EDD6E449D09DBBCCB /* Pods-GoldCalculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +380,7 @@
 		};
 		F21D4C662B3DCB9200739FD4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52196C4F0E109EC9A1762900 /* Pods-GoldCalculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
